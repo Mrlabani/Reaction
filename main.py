@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Set your Telegram bot token
-TELEGRAM_TOKEN = os.environ.get('7233203269:AAG7219W3SyFBwrLz3Wr2W2dZ7WOqzKbWgA')  # or replace with your token as a string
+TELEGRAM_TOKEN = os.getenv('7233203269:AAFvjLkoghd8CeR5Dr7Pcjm-ePTbVJxog_4')  # Ensure this is set in Vercel environment variables
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/"
 
 # Define the array of emojis
@@ -38,6 +38,10 @@ def webhook():
         # Send the reaction
         send_reaction(chat_id, message_id, random_emoji)
     return jsonify({'status': 'ok'})
+
+@app.route('/status', methods=['GET'])
+def status():
+    return jsonify({'status': 'BOT IS RUNNING....... 💥'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
