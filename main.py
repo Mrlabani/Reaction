@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Set your Telegram bot token
-TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')  # or replace with your token as a string
+TELEGRAM_TOKEN = os.environ.get('7233203269:AAG7219W3SyFBwrLz3Wr2W2dZ7WOqzKbWgA')  # or replace with your token as a string
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/"
 
 # Define the array of emojis
